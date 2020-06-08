@@ -1,11 +1,10 @@
-//async function bruh() {
-//const model= await tf.loadLayersModel('file:///C:/Users/baazj/Documents/project/imageclassifierproject/model/model.json');
-//}
+async function bruh() {
+const model= await tf.loadLayersModel('https://raw.githubusercontent.com/bjhaj/Image-Classifer-Project/master/model/model.json');
+//https://cors-anywhere.herokuapp.com/https://github.com/bjhaj/Image-Classifer-Project/blob/master/model/model.json
 
-tf.loadLayersModel("model/model.json").then(model => {
-    this._model = model;
-})
-//bruh();
+}
+
+bruh();
 var class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot'];
 
@@ -21,10 +20,10 @@ function upload() {
 function preprocess(img)
 {
 
-    //convert the image data to a tensor 
+    //convert the image data to a tensor  
     let tensor = tf.fromPixels(img)
-    //resize to 50 X 50
-    const resized = tf.image.resizeBilinear(tensor, [50, 50]).toFloat()
+    //resize to 28 X 28
+    const resized = tf.image.resizeBilinear(tensor, [28, 28]).toFloat()
     // Normalize the image 
     const offset = tf.scalar(255.0);
     const normalized = tf.scalar(1.0).sub(resized.div(offset));
