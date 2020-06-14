@@ -56,4 +56,4 @@ document.write(predictions_single);
 //document.write(class_names[indexOfMax(predictions_single)]);
 }
 bruh();
-
+//thats all for today folks
